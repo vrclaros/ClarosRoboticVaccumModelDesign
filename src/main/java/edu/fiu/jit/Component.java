@@ -40,7 +40,12 @@ public abstract class Component implements SelfCheckCapable {
 		// TODO Auto-generated method stub
 		return name;
 	}
-	
+
+	/**
+	 * Return all the self-check capable subcomponents in your Component as a list
+	 * These will get checked as part of the self-check process.
+	 * @return all subcomponets as a List
+	 */
 	public abstract List<SelfCheckCapable> getSubComponents();
 
 }

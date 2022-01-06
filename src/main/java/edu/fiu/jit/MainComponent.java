@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * A simple example sample main component. You can add a main method to
+ * A simple example main component. You can add a main method to
  * your main component class if you want to execute your app with it.
  * 
  * @author asengupt
@@ -17,6 +17,9 @@ public class MainComponent extends Component {
 	
 	private SubComponent[] mysubcomponents;
 	
+	/**
+	 * Basic constructor that creates this component and 5 subcomponents
+	 */
 	public MainComponent() {
 		this.name = "My main component";
 
@@ -44,6 +47,10 @@ public class MainComponent extends Component {
 		return text;
 	}
 	
+	/**
+	 * Main method to run the main component
+	 * @param args command line arguments (unused)
+	 */
 	public static void main(String[] args) {
 		MainComponent mymaincomponent = new MainComponent();
 		System.out.println("My component is: " + mymaincomponent);
