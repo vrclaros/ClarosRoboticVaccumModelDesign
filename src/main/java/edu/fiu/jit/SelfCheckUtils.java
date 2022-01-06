@@ -12,9 +12,6 @@
  */
 package edu.fiu.jit;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * This will essentially be a class of Static methods that you can 
  * use to test anything in your own classes. I will be adding more
