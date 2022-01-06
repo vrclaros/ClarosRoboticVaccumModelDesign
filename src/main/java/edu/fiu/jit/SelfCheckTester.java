@@ -103,6 +103,10 @@ class SelfCheckTester {
 					if (l instanceof SelfCheckCapable) {
 						count++;
 						result &= basicSelfCheckRunner((SelfCheckCapable)l);
+						if (l instanceof Component) {
+							List<SelfCheckCapable> comps = ((Component)l).getSubComponents();
+							result &= checkComponents(comps);
+						}
 					}
 				}
 			} else if (i instanceof Object[]) {
@@ -110,6 +114,10 @@ class SelfCheckTester {
 					if (l instanceof SelfCheckCapable) {
 						count++;
 						result &= basicSelfCheckRunner((SelfCheckCapable)l);
+						if (l instanceof Component) {
+							List<SelfCheckCapable> comps = ((Component)l).getSubComponents();
+							result &= checkComponents(comps);
+						}
 					}
 				}				
 			}

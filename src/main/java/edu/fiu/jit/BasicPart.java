@@ -5,13 +5,13 @@ package edu.fiu.jit;
  * @author asengupt
  *
  */
-public class SubComponent implements SelfCheckCapable {
+public class BasicPart implements SelfCheckCapable {
 	/** name of the component */ String name;
 	/**
 	 * Simple constructor to create a component
 	 * @param name name of the component
 	 */
-	public SubComponent(String name) {
+	public BasicPart(String name) {
 		this.name = name;
 	}
 	
@@ -25,6 +25,11 @@ public class SubComponent implements SelfCheckCapable {
 	public String getComponentName() {
 		// TODO Auto-generated method stub
 		return name;
+	}
+	
+	@Override
+	public String toString() {
+		return getComponentName();
 	}
 
 }

@@ -3,7 +3,8 @@
  */
 package edu.fiu.jit;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -15,35 +16,40 @@ import java.util.List;
  */
 public class MainComponent extends Component {
 	
-	private SubComponent[] mysubcomponents;
+	private CompositeComponent mycompositecomponent;
+	private BasicPart[] mysubcomponents;
 	
 	/**
 	 * Basic constructor that creates this component and 5 subcomponents
 	 */
 	public MainComponent() {
 		this.name = "My main component";
-
-		mysubcomponents = new SubComponent[5]; 
+		mycompositecomponent = new CompositeComponent();
+		mysubcomponents = new BasicPart[5]; 
 		
 		for(int i = 0; i < mysubcomponents.length; i++) {
-			mysubcomponents[i] = new SubComponent("Component " + i);
+			mysubcomponents[i] = new BasicPart("Component " + i);
 		}
 	}
 
 	@Override
 	public List<SelfCheckCapable> getSubComponents() {
 		// TODO Auto-generated method stub
-		return Arrays.asList(mysubcomponents);
+		List<SelfCheckCapable> internals = new ArrayList<SelfCheckCapable>();
+		Collections.addAll(internals, mycompositecomponent);
+		Collections.addAll(internals, mysubcomponents);
+		return internals;
 	}
 	
 	@Override
 	public String toString() {
-		String text = this.name + " : (";
+		String text = this.name + "\n";
+		text += "Internal parts: ";
 		for(int i = 0; i < mysubcomponents.length; i++) {
 			if (i > 0) text += ", ";
 			text +=mysubcomponents[i].getComponentName();
 		} 
-		text += ")";
+		text += "\nOther items: " + mycompositecomponent;
 		return text;
 	}
 	
