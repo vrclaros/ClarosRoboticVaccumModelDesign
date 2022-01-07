@@ -1,4 +1,7 @@
-package edu.fiu.jit;
+package edu.fiu.jit.appexample;
+
+import edu.fiu.jit.SelfCheckCapable;
+import edu.fiu.jit.SelfCheckUtils;
 
 /**
  * A simple class showing how to use the Self-check process
@@ -6,7 +9,7 @@ package edu.fiu.jit;
  *
  */
 public class BasicPart implements SelfCheckCapable {
-	/** name of the component */ String name;
+	String name; /** name of the component */ 
 	/**
 	 * Simple constructor to create a component
 	 * @param name name of the component

@@ -1,8 +1,9 @@
 /**
  * 
  */
-package edu.fiu.jit;
+package edu.fiu.jit.appexample;
 
+import edu.fiu.jit.*;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -14,8 +15,8 @@ import java.util.List;
  * @author asengupt
  *
  */
-public class MainComponent extends Component {
-	
+public class MainComponent implements GenericComponent {
+	private String name;
 	private CompositeComponent mycompositecomponent;
 	private BasicPart[] mysubcomponents;
 	
@@ -60,6 +61,18 @@ public class MainComponent extends Component {
 	public static void main(String[] args) {
 		MainComponent mymaincomponent = new MainComponent();
 		System.out.println("My component is: " + mymaincomponent);
+	}
+
+	@Override
+	public String getComponentName() {
+		// TODO Auto-generated method stub
+		return name;
+	}
+
+	@Override
+	public boolean selfCheck() {
+		// TODO Auto-generated method stub
+		return SelfCheckUtils.randomCheck(0.05);
 	}
 
 }

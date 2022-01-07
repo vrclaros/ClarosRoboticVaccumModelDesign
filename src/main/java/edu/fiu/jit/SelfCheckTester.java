@@ -9,6 +9,8 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
+import edu.fiu.jit.appexample.MainComponent;
+
 /**
  * @author asengupt
  *
@@ -23,7 +25,7 @@ class SelfCheckTester {
 	void test() {
 		// Change the following line after "new"
 		// To create an instance of YOUR main class
-		Component testTarget = new MainComponent();
+		GenericComponent testTarget = new MainComponent();
 		assertNotEquals(testTarget.getComponentName(), "Template main component");
 		try {
 			assertTrue(checkComponents(testTarget, testTarget.getSubComponents()));			
@@ -103,8 +105,8 @@ class SelfCheckTester {
 					if (l instanceof SelfCheckCapable) {
 						count++;
 						result &= basicSelfCheckRunner((SelfCheckCapable)l);
-						if (l instanceof Component) {
-							List<SelfCheckCapable> comps = ((Component)l).getSubComponents();
+						if (l instanceof GenericComponent) {
+							List<SelfCheckCapable> comps = ((GenericComponent)l).getSubComponents();
 							result &= checkComponents(comps);
 						}
 					}
@@ -114,8 +116,8 @@ class SelfCheckTester {
 					if (l instanceof SelfCheckCapable) {
 						count++;
 						result &= basicSelfCheckRunner((SelfCheckCapable)l);
-						if (l instanceof Component) {
-							List<SelfCheckCapable> comps = ((Component)l).getSubComponents();
+						if (l instanceof GenericComponent) {
+							List<SelfCheckCapable> comps = ((GenericComponent)l).getSubComponents();
 							result &= checkComponents(comps);
 						}
 					}

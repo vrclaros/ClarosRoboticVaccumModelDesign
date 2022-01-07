@@ -1,11 +1,15 @@
 /**
  * 
  */
-package edu.fiu.jit;
+package edu.fiu.jit.appexample;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import edu.fiu.jit.GenericComponent;
+import edu.fiu.jit.SelfCheckCapable;
+import edu.fiu.jit.SelfCheckUtils;
 
 /**
  * A simple example main component. You can add a main method to
@@ -14,8 +18,8 @@ import java.util.List;
  * @author asengupt
  *
  */
-public class CompositeComponent extends Component {
-	
+public class CompositeComponent implements GenericComponent {
+	private String name;
 	private BasicPart head;
 	private BasicPart tail;
 	
@@ -46,6 +50,18 @@ public class CompositeComponent extends Component {
 	public String toString() {
 		return "A composite component named " + getComponentName() + 
 				" with a " + head + " and " + tail;
+	}
+
+	@Override
+	public String getComponentName() {
+		// TODO Auto-generated method stub
+		return name;
+	}
+
+	@Override
+	public boolean selfCheck() {
+		// TODO Auto-generated method stub
+		return SelfCheckUtils.randomCheck(0.1);
 	}
 	
 }
