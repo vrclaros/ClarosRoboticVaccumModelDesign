@@ -12,17 +12,20 @@ import org.junit.jupiter.api.Test;
 import edu.fiu.jit.appexample.MainComponent;
 
 /**
+ * A JUnit Test class that checks to ensure that all your
+ * components can be self-checked. 
+ * 
  * @author asengupt
  *
  */
-class SelfCheckTester {
+public class SelfCheckTester {
 	
 	/**
 	 * Update this test case and change the first line in the 
 	 * test below to create an instance of your Main class.
 	 */
 	@Test
-	void test() {
+	public void test() {
 		// Change the following line after "new"
 		// To create an instance of YOUR main class
 		GenericComponent testTarget = new MainComponent();
@@ -54,21 +57,6 @@ class SelfCheckTester {
 	 * of the item passed in, so if you call it from the self-check method
 	 * you will end up creating an infinite recursion!
 	 * 
-	 * However, this can be called from the runSelfCheck implementation
-	 * 
-	 * To use this, create an instance of an object that implements SelfCheckCapable
-	 * Then call this method from runSelfCheck (or elsewhere) as follows:
-	 * 
-	 * public class Test implements SelfCheckCapable ....
-	 * 
-	 * Test t = new new Test(...);
-	 * 
-	 * From outside the Test class: 
-	 *    SelfCheckUtils.basicSelfCheckRunner(t);
-	 *    
-	 * From inside the Test class (e.g. from runSelfCheck):
-	 *    SelfCheckUtils.basicSelfCheckRunner(this);
-	 *    
 	 * @param item the item to be tested
 	 * @return the colorized version of the run. Colors may not show in all terminals
 	 */
@@ -79,11 +67,10 @@ class SelfCheckTester {
 	}
 
 	/**
-	 * A basic checkComponents method that tests all componets that
-	 * are provided as parameters.
-	 * 
-	 * Again, do not use this from the selfCheck method, but can be used
-	 * from the runSelfCheck method to check all components in the class.
+	 * This tester tests all componets that are provided as parameters.
+	 * If any component is implemented as a GenericComponent, its subcomponents
+	 * are also tested. Note that the count will only reflect the top-level
+	 * components for the time being.
 	 * 
 	 * SelfCheckUtils.checkComponents(wheels, sensors, camera);
 	 * 

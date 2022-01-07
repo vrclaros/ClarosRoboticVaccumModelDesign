@@ -4,7 +4,13 @@ import edu.fiu.jit.SelfCheckCapable;
 import edu.fiu.jit.SelfCheckUtils;
 
 /**
- * A simple class showing how to use the Self-check process
+ * A simple part class that can be self-tested
+ * but does not have any internal components so it can
+ * implement the selfcheckcapable interface only.
+ * 
+ * You can also implement GenericComponent and return null
+ * for the getSubComponents method.
+ * 
  * @author asengupt
  *
  */

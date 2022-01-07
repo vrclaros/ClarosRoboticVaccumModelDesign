@@ -12,8 +12,9 @@ import edu.fiu.jit.SelfCheckCapable;
 import edu.fiu.jit.SelfCheckUtils;
 
 /**
- * A simple example main component. You can add a main method to
- * your main component class if you want to execute your app with it.
+ * A sample internal component that has its own sub-components.
+ * So this should also implement GenericComponent and return
+ * a list of subcomponents.
  * 
  * @author asengupt
  *
