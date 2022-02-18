@@ -7,25 +7,29 @@ import edu.fiu.jit.SelfCheckCapable;
 import edu.fiu.jit.SelfCheckUtils;
 
 /**
- * Class for components:
- * signal receiver, app, bin, memory, wifi receiver and button
+ * 
  *
- **/
- 
-public class Component implements SelfCheckCapable{
-	private boolean status;
-	private String componentName;
+ */
+public class WifiReceiver extends Component implements SelfCheckCapable{
+	private String status;
+	
+	public void turnOn() {
+		//turn wifi receiver On
+		
+	}
+	public void turnOff() {
+		//turn wifi receiver Off
+	}
 	
 	@Override
 	public String getComponentName() {
 		// TODO Auto-generated method stub
-		return "Components (Misc)";
+		return "Wifi Receiver";
 	}
 	@Override
 	public boolean selfCheck() {
 		// TODO Auto-generated method stub
-		return SelfCheckUtils.randomCheck(0.3);
+		return SelfCheckUtils.randomCheck(0.1);
 	}
-	
 
 }

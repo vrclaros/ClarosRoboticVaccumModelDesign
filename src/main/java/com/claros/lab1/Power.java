@@ -8,7 +8,7 @@ package com.claros.lab1;
  *Class intended to provide power to Vacuum
  *
  */
-public class Power {
+public class Power{
 	private int BatteryCapacity;
 	private boolean VacuumStatus;
 	

@@ -6,7 +6,7 @@ package com.claros.lab1;
  *
  */
 
-public class Brush {
+public class Brush{
 	private int length;
 	private String brushType;
 	private boolean brushStatus;
